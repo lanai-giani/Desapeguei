@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-padrao: #f8b4d7;
+    --cor-padrao-hover: #a0a8f1;
+    --cor-fonte: #fff;
+    --cor-fonte-p: #555;
+    --cor-btn: #563434;
+    --cor-btn-hover: #412c2c;
+    --cor-btn-fonte: #000;
+    --cor-fonte-corpo: #155;
+    --cor-fonte-corpo-leve: #777;
+}
+
+body {
+    font-family: 'IBM Plex Serif', serif; /* Corrigido de 'Poopins' para uma fonte válida */
+}
+
+.banner {
+    background: radial-gradient(var(--cor-padrao-hover), var(--cor-padrao)); /* Removido espaço extra depois de var */
+}
+
+.banner .linha{
+    margin-top: 70px;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--cor-btn-fonte);
+}
+.banner p{
+    color: var(--cor-fonte);
+}
+.linha{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0;
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 20px 0;
+}
+
+.col-2 p{
+    font-weight: 600;
+    color: var(--cor-btn-fonte);
+}
+.btn{
+    text-decoration: none;
+    color: var(--cor-fonte);
+    background: var(--cor-btn);
+    padding:8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.6s;
+}
+
+.btn:hover{
+    background: var(--cor-btn-hover);
+    color:var(--cor-btn-fonte);
+}
+.categorias{
+    margin: 70px 0;
+}
+.corpo-categorias{
+    max-width: 1000px;
+    margin:auto;
+    padding-left: 25px;
+    padding-right: 24px;
+}
+
+.col-3{
+    flex-basis:30%;
+    max-width: 250px;
+    margin-bottom: 30px;
+}
+
+.col-3 img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.logo {
+    flex: 1;
+}
+
+.barra-pesquisa {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.barra-pesquisa input[type="search"] {
+    padding: 8px 100px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    font-size: 14px;
+    outline: none;
+}
+
+nav {
+    flex: 3;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-fonte);
+    font-weight: 500;
+}
+
+.titulo-categorias {
+    text-align: center;
+    font-size: 40px;
+    color: var(--cor-btn-fonte);
+    margin-bottom: 20px;
+}
+.categoria-img {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.categoria-img img {
+    width: 100%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.categoria-img:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.3);
+}
+
+.categoria-nome {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--cor-btn-fonte);
+}
+.col-3 {
+    flex-basis: 22%;
+    max-width: 22%;
+    margin-bottom: 30px;
+}
+.col-4{
+    flex-basis: 25%;
+    max-width: 200px;
+    padding: 10px;
+    margin-bottom: 50px;
+    transition : transform 0.3s;
+}
+
+.col-4:hover{
+    transform: scale(1.1);
+}
+
+.col-4 img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.titulo{
+    position: relative;
+    line-height: 60px;
+    margin: 0 auto 80px;
+    text-align: center;
+    color: var(--cor-fonte-corpo);
+}
+.titulo::after{
+    content: '';
+    background-color: var(--cor-padrao);
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h4{
+    color: var(--cor-fonte-corpo);
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 14px;
+}
+.ofertas{
+    background: radial-gradient(var(--cor-padrao-hover), var(--cor-padrao));
+    margin-top: 80px;
+    padding: 30px 0;
+}
+
+col-2 .oferta-img{
+    padding: 50px;
+}
+
+small{
+    color: var(--cor-fonte)
+
+}
+.rodape{
+    background: var(--cor-btn-fonte);
+    color:  var(--cor-fonte);
+    padding: 60px 0 20px;
+    font-size: 14px;
+}
+
+.rodape.p{
+    color: var(--cor-fonte);
+}
+
+.rodape h3{
+    color: var(--cor-fonte);
+    margin-bottom: 20px;
+}
+
+.rodape-col-1,.rodape-col-2 ,.rodape-col-3, .rodape-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.rodape-col-1{
+    flex-basis: 30%
+}
+
+.rodape-col-2{
+    flex: 1;
+    text-align: center;
+}
+.rodape-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.rodape-col-3, .rodape-col-4{
+    flex-basis: 12%;
+    text-align: right;
+}
+ul{
+    list-style-type: none;
+}
+
+.app-logo{
+    margin-top: 20px;
+}
+
+.app-logo img{
+    width: 140px;
+}
+
+.rodape hr{
+    border: none;
+    height: 1px;
+    background: var(--cor-fonte);
+    margin: 20px 0;
+}
+
+.direitos{
+    text-align:  center;
+}
+
+.menuCelular{
+    width: 20px;
+    margin-left:  20 px;
+    display: none;
+}
+
+/*-------------listagem de produtps-------------*/
+.novoMenu
+
+
+
+
+/*-------------tablet-------------*/
+
+@media only screen and (max-width: 800px){
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: var(--cor-btn-fonte);
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-right: 50px;
+        margin-bottom: 10px;
+
+    }
+    nav ul li a{
+        color: var();
+    }
+
+    .menuCelular{
+        display: block;
+    }
+}
+
+
+
+/*-------------celular-------------*/
+@media only screen and (max-width: 600px){
+    .linha{
+        text-align: center;
+    }
+
+    .col-2, .col-3, .col-4{
+        flex-basis: 100%;
+    }
+
+    .col2 h1{
+        font-size: 27px;
+    }
+
+    .rodape-col-3, .rodape-col-4{
+        text-align: center;
+    }
+
+    .col-4 p{
+        font-size: 24px;
+    }
+}
