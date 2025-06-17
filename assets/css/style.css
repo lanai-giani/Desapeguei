@@ -330,7 +330,7 @@ ul{
 }
 
 /*-------------listagem de produtps-------------*/
-.novoMenu
+
 
 
 
@@ -387,4 +387,95 @@ ul{
     .col-4 p{
         font-size: 24px;
     }
+}
+
+/*---------------cadastro-------------*/
+.login-container {
+    background: radial-gradient(var(--cor-padrao-hover), var(--cor-padrao));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.login-box h1 {
+    color: var(--cor-btn-fonte);
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cor-btn-fonte);
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-box .btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: var(--cor-btn);
+    color: var(--cor-fonte);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-box .btn:hover {
+    background: var(--cor-btn-hover);
+}
+
+.login-link {
+    margin-top: 15px;
+    color: var(--cor-btn-fonte);
+}
+
+.login-link a {
+    color: var(--cor-padrao-hover);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsividade para a página de login */
+@media only screen and (max-width: 600px) {
+    .login-box {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+/*-------------------login------------*/
+body.pagina-login {
+    background: radial-gradient(var(--cor-padrao-hover), var(--cor-padrao));
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
