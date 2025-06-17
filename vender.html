@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Anunciar Produto | Desapeguei</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <!-- Seu menu padrão aqui -->
+    </div>
+
+    <div class="container">
+        <h1 class="titulo">Anunciar Produto</h1>
+        
+        <form id="formAnuncio" class="form-anuncio">
+            <div class="input-group">
+                <label for="titulo">Título do Anúncio</label>
+                <input type="text" id="titulo" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" required>
+                    <option value="">Selecione...</option>
+                    <option value="vestuario">Vestuário</option>
+                    <option value="calcados">Calçados</option>
+                    <!-- Outras categorias -->
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="preco">Preço (R$)</label>
+                <input type="number" id="preco" step="0.01" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="4" required></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="fotos">Fotos (Máx. 5)</label>
+                <input type="file" id="fotos" multiple accept="image/*">
+                <div id="preview-fotos" class="preview-container"></div>
+            </div>
+            
+            <button type="submit" class="btn btn-anunciar">Publicar Anúncio</button>
+        </form>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

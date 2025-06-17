@@ -137,19 +137,35 @@ nav ul li a{
     flex: 1;
 }
 
+.logo img {
+    width: 180px; /* Aumentado de 130px */
+    transition: transform 0.3s ease;
+}
+.logo:hover img {
+    transform: scale(1.05);
+}
+
 .barra-pesquisa {
+    position: relative;
     flex: 2;
-    display: flex;
-    justify-content: center;
+    max-width: 600px;
+    margin: 0 20px;
 }
 
 .barra-pesquisa input[type="search"] {
-    padding: 8px 100px;
-    border: 2px solid #ccc;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 600px;
-    font-size: 14px;
+     width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 2px solid var(--cor-padrao);
+    border-radius: 30px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.9);
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.barra-pesquisa input[type="search"]:focus {
+    border-color: var(--cor-padrao-hover);
+    box-shadow: 0 0 0 3px rgba(160,168,241,0.3);
     outline: none;
 }
 
@@ -186,13 +202,19 @@ nav ul li a {
 }
 
 .categoria-img img {
+   border-radius: 15px; /* Valor que você pode ajustar */
+    overflow: hidden; /* Garante que a imagem respeite o border-radius */
+    /* Mantenha as outras propriedades existentes: */
     width: 100%;
+    object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .categoria-img:hover img {
     transform: scale(1.05);
-    filter: brightness(1.3);
+    filter: brightness(1.1); /* Ajuste opcional para melhor contraste */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra sutil opcional */
 }
 
 .categoria-nome {
@@ -478,4 +500,208 @@ body.pagina-login {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+}
+
+
+
+/* ===== CARROSSEL DE CATEGORIAS ===== */
+.carrossel-categorias {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.carrossel-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrossel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carrossel-btn {
+    background: var(--cor-padrao);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    z-index: 1;
+}
+
+.carrossel-btn:hover {
+    background: var(--cor-padrao-hover);
+    transform: scale(1.1);
+}
+
+.prev-btn {
+    margin-right: 15px;
+}
+
+.next-btn {
+    margin-left: 15px;
+}
+
+/* Esconde o botão quando não houver mais itens */
+.carrossel-btn.hidden {
+    visibility: hidden;
+}
+
+/* ===== CARROSSEL DE CATEGORIAS ===== */
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.carrossel-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Mantém o espaçamento original */
+    width: 100%;
+    max-width: 1000px; /* Mesma largura do .corpo-categorias */
+    margin: 0 auto;
+}
+
+/* Mantém todas as outras regras do carrossel */
+.carrossel-btn {
+    background: var(--cor-padrao);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.carrossel-btn:hover {
+    background: var(--cor-padrao-hover);
+    transform: scale(1.1);
+}
+
+.carrossel-btn.hidden {
+    visibility: hidden;
+}
+
+.hidden-categoria {
+    display: none !important;
+}
+
+
+/* ESTILOS PARA PÁGINA DE CATEGORIA */
+.titulo-categoria {
+    text-align: center;
+    margin: 30px 0;
+    color: var(--cor-padrao);
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.btn-filtro {
+    padding: 8px 15px;
+    background: white;
+    border: 1px solid var(--cor-padrao);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.produto {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+
+
+/* Estilos para a página de vender */
+.form-anuncio {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.btn-anunciar {
+    background: var(--cor-padrao);
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.preview-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+/* Loader */
+.loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Mensagem de erro */
+#erro-mensagem {
+    color: #ff6b6b;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Botão desabilitado */
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
