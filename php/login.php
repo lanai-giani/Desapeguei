@@ -1,6 +1,6 @@
 <?php
 session_start();
-$base_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/';
+$base_url = dirname($_SERVER['SCRIPT_NAME']) . '/';
 require 'conexao.php';
 
 // Debug (opcional - remova depois)
@@ -24,7 +24,7 @@ try {
 
     // Verifica se usuário existe e senha está correta
     if (!$usuario) {
-        header("Location: " . $base_url . "login.html?erro=credenciais");
+        header("Location: " . $base_url . "login.php?erro=credenciais");
         exit();
     }
 
@@ -36,10 +36,10 @@ try {
         ];
         
         // Redireciona para área logada
-        header("Location: " . $base_url . "index.php");
+        header("Location: /Desapeguei/index.html");
         exit();
     } else {
-        header("Location: " . $base_url . "login.html?erro=credenciais");
+        header("Location: " . $base_url . "login.php?erro=credenciais");
         exit();
     }
 } catch (PDOException $e) {

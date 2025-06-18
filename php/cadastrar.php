@@ -1,6 +1,6 @@
 <?php
 // Definir a base URL primeiro
-$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Desapeguei/';
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/desapeguei/';
 require 'conexao.php';
 
 // Recebe dados do formulário

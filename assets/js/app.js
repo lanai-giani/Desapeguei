@@ -1,4 +1,4 @@
-/*----------celular------------*/
+/*---------------------------------celular----------------------------------*/
 var menuItens = document.getElementById("menuItens");
 menuItens.style.maxHeight = "0px"
 
@@ -15,7 +15,7 @@ function menuCelular(){
 
 
 
-/*--------carrosel e botões-----------*/
+/*----------------------carrosel e botões-----------------------------------------------------*/
 document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.next-btn');
     const prevBtn = document.querySelector('.prev-btn');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-/*----------- Verificação se está logado para vender--------------*/
+/*--------------------------------------- Verificação se está logado para vender--------------------------------*/
 
 function verificarLogin() {
     return localStorage.getItem('usuarioLogado') === 'true';
@@ -84,3 +84,15 @@ document.getElementById('btnVender').addEventListener('click', function(e) {
     }
 });
 
+
+
+/*------------------------validação senha pra ver se é igual--------------------------*/
+document.getElementById('btnCadastro').addEventListener('click', function(event) {
+    const senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmar-senha').value;
+    
+    if (senha !== confirmarSenha) {
+        event.preventDefault();
+        alert('As senhas não coincidem!');
+    }
+});
