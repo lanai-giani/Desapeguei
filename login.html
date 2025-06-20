@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar | desapeguei</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body class="pagina-login">
     
@@ -29,11 +30,27 @@
                     <input type="password" id="senha" name="senha" required>
                 </div>
                 <button type="submit" class="btn">Acessar</button>
+                <div class="google-btn">
+                    <div id="g_id_onload"
+                        data-client_id="914623445866-fcn65judhjk3hpvmsr0789l9r3b2qvii.apps.googleusercontent.com"
+                        data-callback="handleGoogleLogin">
+                    </div>
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-theme="filled_blue"
+                        data-text="continue_with"
+                        data-shape="rectangular">
+                    </div>
+                </div>
             </form>
+            
             <p class="login-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+            <div class="login-link">
+                <a href="recuperar_senha.html">Esqueceu a senha?</a>
+            </div>
+            </div>
         </div>
     </div>
-
     <script src="assets/js/app.js"></script>
 </body>
 </html>

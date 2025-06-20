@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Senha | Desapeguei</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .alert-error {
+            padding: 10px 15px;
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .password-rules {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/logoTeste.png" alt="desapeguei" width="130px">
+            </a>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Criar Nova Senha</h1>
+            
+            <!-- Container para mensagens de erro -->
+            <div id="errorContainer"></div>
+            
+            <form id="passwordForm" action="php/nova_senha.php" method="POST">
+                <input type="hidden" id="token" name="token" value="">
+                
+                <div class="input-group">
+                    <label for="senha">Nova Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                    <p class="password-rules">Mínimo 8 caracteres, com letras e números</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirmar_senha">Confirmar Nova Senha</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                </div>
+                
+                <button type="submit" class="btn">Atualizar Senha</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtém parâmetros da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+            const error = urlParams.get('erro');
+            
+            // Define o token no formulário
+            if (token) {
+                document.getElementById('token').value = token;
+            }
+            
+            // Mapeamento de mensagens de erro
+            const errorMessages = {
+                'token_invalido': 'Link inválido ou expirado. Solicite um novo link.',
+                'senhas_nao_coincidem': 'As senhas não coincidem.',
+                'senha_fraca': 'A senha deve ter pelo menos 8 caracteres, incluindo letras e números.'
+            };
+            
+            // Exibe erro se houver na URL
+            if (error && errorMessages[error]) {
+                showError(errorMessages[error]);
+            }
+            
+            // Validação do formulário
+            document.getElementById('passwordForm').addEventListener('submit', function(e) {
+                const senha = document.getElementById('senha').value;
+                const confirmarSenha = document.getElementById('confirmar_senha').value;
+                
+                // Verifica se as senhas coincidem
+                if (senha !== confirmarSenha) {
+                    e.preventDefault();
+                    showError('As senhas não coincidem.');
+                    return;
+                }
+                
+                // Verifica força da senha
+                if (senha.length < 8 || !/[a-zA-Z]/.test(senha) || !/[0-9]/.test(senha)) {
+                    e.preventDefault();
+                    showError('A senha deve ter pelo menos 8 caracteres, incluindo letras e números.');
+                    return;
+                }
+                
+                // Verifica se há token
+                if (!document.getElementById('token').value) {
+                    e.preventDefault();
+                    showError('Link inválido. Acesse através do e-mail de recuperação.');
+                    return;
+                }
+            });
+            
+            // Função para exibir mensagens de erro
+            function showError(message) {
+                const errorContainer = document.getElementById('errorContainer');
+                errorContainer.innerHTML = `
+                    <div class="alert-error">
+                        ${message}
+                    </div>
+                `;
+                
+                // Rolagem suave para o erro
+                errorContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Remove a mensagem após 8 segundos
+                setTimeout(() => {
+                    if (errorContainer.innerHTML.includes(message)) {
+                        errorContainer.innerHTML = '';
+                    }
+                }, 8000);
+            }
+        });
+    </script>
+</body>
+</html>

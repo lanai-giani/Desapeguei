@@ -1,7 +1,7 @@
 <?php
 session_start();
 $base_url = dirname($_SERVER['SCRIPT_NAME']) . '/';
-require 'conexao.php';
+require_once __DIR__ . '/../conexao.php';
 
 // Debug (opcional - remova depois)
 error_reporting(E_ALL);
