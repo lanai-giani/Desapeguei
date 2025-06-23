@@ -58,7 +58,7 @@ nav ul li{
 
 nav ul li a{
     text-decoration: none;
-    color: var(--cor-btn-fonte);
+    color: var(--cor-fonte);
 }
 .banner p{
     color: var(--cor-fonte);
@@ -180,14 +180,60 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
-    margin-left: 15px;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
+
 nav ul li a {
-    text-decoration: none;
+    position: relative;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li:hover a {
     color: var(--cor-fonte);
-    font-weight: 500;
+}
+
+/* Bordinha clara animada */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-fonte);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li:hover a::after {
+    width: 60%;
+    background-color: var(--cor-padrao);
+}
+
+/* Efeito de destaque no item ativo */
+nav ul li a.active::after {
+    width: 60%;
+    background-color: var(--cor-padrao);
+}
+
+/* Ajuste para mobile */
+@media only screen and (max-width: 800px) {
+    nav ul li a::after {
+        display: none;
+    }
+    
+    nav ul li:hover a {
+        color: var(--cor-padrao);
+    }
+}
+
+/* Mantendo o estilo do dropdown existente */
+.dropdown:hover .dropbtn::after {
+    transform: rotate(180deg);
 }
 
 .titulo-categorias {
@@ -378,7 +424,7 @@ ul{
 
     }
     nav ul li a{
-        color: var();
+        color: var(--cor-fonte);
     }
 
     .menuCelular{
@@ -721,3 +767,89 @@ button:disabled {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+
+
+        
+/* Dropdown container - Mantendo seu estilo existente */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botão principal do dropdown - Integrado ao seu tema */
+.dropbtn {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--cor-fonte);
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* Conteúdo do dropdown - estilo harmonizado */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-top: 5px;
+}
+
+/* Itens do dropdown */
+.dropdown-content a {
+    color: var(--cor-btn-fonte);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Primeiro e último itens com bordas arredondadas */
+.dropdown-content a:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dropdown-content a:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom: none;
+}
+
+/* Efeito hover nos itens */
+.dropdown-content a:hover {
+    background-color: var(--cor-padrao);
+    color: white;
+    padding-left: 20px;
+}
+
+/* Efeito hover no dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.dropdown:hover .dropbtn::after {
+    transform: rotate(180deg);
+}

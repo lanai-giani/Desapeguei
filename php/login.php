@@ -35,6 +35,11 @@ try {
             'email' => $usuario['email']
         ];
         
+        session_start();
+        $_SESSION['usuario'] = $email; // ou ID, nome, etc.
+        header("Location: ../index.php");
+        exit();
+
         // Redireciona para área logada
         header("Location: /Desapeguei/index.html");
         exit();

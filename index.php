@@ -1,9 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>desapeguei.com.br</title>
+    <title>Desapeguei.com.br</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -26,7 +29,17 @@
                         <li><a href="#">Início</a></li>
                         <li><a href="#">Produtos</a></li>
                         <li><a href="#" id="btnVender" >Vender</a></li>
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                        <li class="dropdown">
+                            <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
+                            <div class="dropdown-content">
+                        <a href="php/logout.php">Sair</a>
+                        </div>
+                        </li>
+                        <?php else: ?>
                         <li><a href="cadastro.html">Cadastrar/Entrar</a></li>
+                        <?php endif; ?>
+
                     </ul>
                 </nav>
 
