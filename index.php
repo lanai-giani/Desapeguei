@@ -28,7 +28,7 @@ session_start();
                     <ul id="menuItens">
                         <li><a href="#">Início</a></li>
                         <li><a href="#">Produtos</a></li>
-                        <li><a href="#" id="btnVender" >Vender</a></li>
+                        <li><a href="php/verifica_venda.php">Vender</a></li>
                         <?php if (isset($_SESSION['usuario'])): ?>
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
