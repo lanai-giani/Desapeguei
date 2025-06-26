@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'lanaigiani10@gmail.com'; 
-                $mail->Password = 'ncij xfsp hmza wwba'; 
+                $mail->Username = 'lanaigiani10@gmail.com'; // <-- seu Gmail completo
+                $mail->Password = 'ncij xfsp hmza wwba'; // <-- sua senha de aplicativo
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
 

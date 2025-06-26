@@ -68,9 +68,12 @@ session_start();
 <div class="corpo-categorias">
     <h2 class="titulo">Categorias</h2>
     <div class="carrossel-container">
+        <!-- Botão de navegação anterior (inicialmente escondido) -->
         <button class="carrossel-btn prev-btn hidden" aria-label="Categorias anteriores">&lt;</button>
         
+        <!-- Área das categorias -->
         <div class="carrossel-inner">
+            <!-- Categorias visíveis -->
             <div class="col-3 categoria-img">
                 <a href="categorias/vestuario.php">
                     <img src="assets/img/categoria-1.jpg" alt="Vestuário">
@@ -89,6 +92,8 @@ session_start();
                 <img src="assets/img/categoria-4.webp" alt="Bolsas">
                 <p class="categoria-nome">Bolsas</p>
             </div>
+            
+            <!-- Categorias ocultas (serão mostradas ao navegar) -->
             <div class="col-3 categoria-img hidden-categoria">
                 <img src="assets/img/livro.png" alt="Livros">
                 <p class="categoria-nome">Livros</p>
@@ -107,6 +112,7 @@ session_start();
             </div>
         </div>
         
+        <!-- Botão de próxima categoria -->
         <button class="carrossel-btn next-btn" aria-label="Próximas categorias">&gt;</button>
     </div>
 </div>

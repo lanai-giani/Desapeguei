@@ -28,7 +28,7 @@ session_start();
                     <ul id="menuItens">
                         <li><a href="#">Início</a></li>
                         <li><a href="#">Produtos</a></li>
-                        <li><a href="vender.php">Vender</a></li>
+                        <li><a href="vender.php" id="btnVender" >Vender</a></li>
                         <?php if (isset($_SESSION['usuario'])): ?>
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
@@ -68,11 +68,14 @@ session_start();
 <div class="corpo-categorias">
     <h2 class="titulo">Categorias</h2>
     <div class="carrossel-container">
+        <!-- Botão de navegação anterior (inicialmente escondido) -->
         <button class="carrossel-btn prev-btn hidden" aria-label="Categorias anteriores">&lt;</button>
         
+        <!-- Área das categorias -->
         <div class="carrossel-inner">
+            <!-- Categorias visíveis -->
             <div class="col-3 categoria-img">
-                <a href="categorias/vestuario.php">
+                <a href="vestuario.html">
                     <img src="assets/img/categoria-1.jpg" alt="Vestuário">
                 </a>
                 <p class="categoria-nome">Vestuário</p>
@@ -89,6 +92,8 @@ session_start();
                 <img src="assets/img/categoria-4.webp" alt="Bolsas">
                 <p class="categoria-nome">Bolsas</p>
             </div>
+            
+            <!-- Categorias ocultas (serão mostradas ao navegar) -->
             <div class="col-3 categoria-img hidden-categoria">
                 <img src="assets/img/livro.png" alt="Livros">
                 <p class="categoria-nome">Livros</p>
@@ -107,6 +112,7 @@ session_start();
             </div>
         </div>
         
+        <!-- Botão de próxima categoria -->
         <button class="carrossel-btn next-btn" aria-label="Próximas categorias">&gt;</button>
     </div>
 </div>

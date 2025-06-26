@@ -45,7 +45,7 @@ session_start();
         <h1 class="titulo">Anunciar Produto</h1>
         
         <form id="formAnuncio" class="form-anuncio" action="php/processa_anuncio.php" method="POST" enctype="multipart/form-data">
-            <!-- Fotos -->
+            <!-- Seção de Fotos -->
             <div class="input-group foto-section">
                 <label for="fotos">Fotos</label>
                 <div class="foto-instructions">Adicione até 5 fotos do produto</div>
@@ -53,26 +53,26 @@ session_start();
                 <div id="preview-fotos" class="preview-container"></div>
             </div>
             
-            <!-- Título -->
+            <!-- Seção de Título -->
             <div class="input-group">
                 <label for="titulo">Título</label>
                 <input type="text" id="titulo" name="titulo" placeholder="ex: 'vestido farm sensação' ou 'blusa adidas grito da moda'" required>
             </div>
             
-            <!-- Marca -->
+            <!-- Seção de Marca -->
             <div class="input-group">
                 <label for="marca">Marca</label>
                 <input type="text" id="marca" name="marca" placeholder="Qual a marca do produto?" required>
             </div>
             
-            <!-- Descrição -->
+            <!-- Seção de Descrição -->
             <div class="input-group">
                 <label for="descricao">Descrição</label>
                 <textarea id="descricao" name="descricao" rows="4" placeholder="ex: vestido floral farm, coleção borboletas, em seda colorida, ótimo acabamento, você vai amar. faz muito frio em sp, quase não usei." required></textarea>
                 <div class="char-counter"><span id="char-count">0</span> de 350 caracteres</div>
             </div>
             
-            <!-- Estado do Produto -->
+            <!-- Seção de Estado do Produto -->
             <div class="input-group estado-produto">
                 <label>Estado do produto</label>
                 <div class="radio-group">
@@ -84,7 +84,7 @@ session_start();
                 </div>
             </div>
             
-            <!-- Categoria -->
+            <!-- Seção de Categoria -->
             <div class="input-group">
                 <label for="categoria">Categoria</label>
                 <select id="categoria" name="categoria" required>
@@ -100,7 +100,7 @@ session_start();
                 </select>
             </div>
             
-            <!-- Preço -->
+            <!-- Seção de Preço -->
             <div class="input-group preco-section">
                 <label for="preco">Preço</label>
                 <div class="preco-input">
@@ -116,6 +116,7 @@ session_start();
     <script src="assets/js/app.js"></script>
     
     <script>
+        // Contador de caracteres para a descrição
         const descricao = document.getElementById('descricao');
         const charCount = document.getElementById('char-count');
         
@@ -123,6 +124,7 @@ session_start();
             charCount.textContent = this.value.length;
         });
 
+        // Verificação de login ao carregar a página
         document.addEventListener('DOMContentLoaded', function() {
             <?php if (!isset($_SESSION['usuario'])) : ?>
                 alert('Você precisa estar logado para vender!');

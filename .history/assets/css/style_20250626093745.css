@@ -655,7 +655,7 @@ body.pagina-login {
 .titulo-categoria {
     text-align: center;
     margin: 30px 0;
-    color: var(--cor-fonte-corpo);
+    color: var(--cor-padrao);
 }
 
 .filtros {

@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha'];
     $confirmarSenha = $_POST['confirmar_senha'];
 
+    // Verificações básicas de segurança
     if (empty($token) || empty($senha) || empty($confirmarSenha)) {
         header("Location: ../nova_senha.html?erro=campos_vazios&token=$token");
         exit();
@@ -16,14 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Regras mínimas de senha 
+    // Regras mínimas de senha (você pode ajustar depois)
     if (strlen($senha) < 8 || !preg_match('/[a-zA-Z]/', $senha) || !preg_match('/[0-9]/', $senha)) {
         header("Location: ../nova_senha.html?erro=senha_fraca&token=$token");
         exit();
     }
 
     try {
-        // Verifica se o token é válido
+        // Verifica se o token ainda é válido
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE reset_token = ? AND reset_expira > NOW()");
         $stmt->execute([$token]);
         $usuario = $stmt->fetch();
@@ -33,11 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
+        // Atualiza a senha e remove o token
         $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
         $update = $pdo->prepare("UPDATE usuarios SET senha = ?, reset_token = NULL, reset_expira = NULL WHERE id = ?");
         $update->execute([$senhaHash, $usuario['id']]);
 
+        // Redireciona para login com sucesso
         header("Location: ../login.html?senha_alterada=1");
         exit();
 
