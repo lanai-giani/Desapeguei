@@ -96,3 +96,31 @@ document.getElementById('btnCadastro').addEventListener('click', function(event)
         alert('As senhas não coincidem!');
     }
 });
+
+/*------------------------subcategorias--------------------------*/
+document.addEventListener('DOMContentLoaded', function () {
+    const categoriaSelect = document.getElementById('categoria');
+    const subcategoriaGroup = document.getElementById('subcategoria-group');
+    const subcategoriaSelect = document.getElementById('subcategoria');
+
+    // Inicialmente esconda a subcategoria
+    subcategoriaGroup.classList.add('hidden');
+
+    categoriaSelect.addEventListener('change', function () {
+        const categoria = this.value;
+
+        if (categoria !== '') {
+            fetch(`php/subcategorias.php?categoria=${categoria}`)
+                .then(response => response.text())
+                .then(data => {
+                    subcategoriaSelect.innerHTML = '<option value="">Selecione uma subcategoria</option>' + data;
+                    // REMOVA a classe 'hidden' para mostrar o grupo
+                    subcategoriaGroup.classList.remove('hidden');
+                });
+        } else {
+            subcategoriaSelect.innerHTML = '<option value="">Selecione uma subcategoria</option>';
+            // ADICIONE a classe 'hidden' para esconder o grupo
+            subcategoriaGroup.classList.add('hidden');
+        }
+    });
+});

@@ -2,7 +2,7 @@
 session_start();
 require_once __DIR__ . '/../php/conexao.php';
 
-$categoria = 'vestuario';
+$categoria = 'eletronicos';
 
 $stmt = $pdo->prepare("SELECT * FROM anuncios WHERE categoria = ?");
 $stmt->execute([$categoria]);
@@ -18,7 +18,6 @@ $anuncios = $stmt->fetchAll();
 </head>
 <body>
 
-    <!-- Navbar igual à do index -->
     <div class="navbar">
         <div class="logo">
             <a href="../index.php"><img src="../assets/img/logoTeste.png" alt="desapeguei" width="180"></a>
@@ -48,7 +47,7 @@ $anuncios = $stmt->fetchAll();
     </div>
 
     <div class="container">
-        <h1 class="titulo-categoria">Vestuário</h1>
+        <h1 class="titulo-categoria">Eletrônicos</h1>
 
         <div class="filtros">
             <button class="btn-filtro">Feminino</button>
@@ -76,8 +75,6 @@ $anuncios = $stmt->fetchAll();
         </div>
     </div>
     
-
-    <!-- Rodapé igual ao index -->
     <footer class="rodape">
         <div class="container">
             <div class="linha">

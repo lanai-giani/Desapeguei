@@ -99,7 +99,13 @@ session_start();
                     <option value="kids">Kids</option>
                 </select>
             </div>
-            
+
+            <div class="input-group" id="subcategoria-group">
+                <label for="subcategoria">Subcategoria</label>
+                <select id="subcategoria" name="subcategoria" required>
+                    <option value="">Selecione uma subcategoria</option>
+                </select>
+                </div>
             <!-- Preço -->
             <div class="input-group preco-section">
                 <label for="preco">Preço</label>

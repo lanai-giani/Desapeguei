@@ -78,32 +78,46 @@ session_start();
                 <p class="categoria-nome">Vestuário</p>
         </div>
             <div class="col-3 categoria-img">
-                <img src="assets/img/categoria-2.jpg" alt="Calçados">
-                <p class="categoria-nome">Calçados</p>
+                    <a href="categorias/calcados.php">
+                        <img src="assets/img/categoria-2.jpg" alt="Calçados">
+                        <p class="categoria-nome">Calçados</p>
+                        </a>
             </div>
             <div class="col-3 categoria-img">
+                <a href="categorias/eletronicos.php">
                 <img src="assets/img/categoria-3.jpg" alt="Eletrônicos">
                 <p class="categoria-nome">Eletrônicos</p>
+                </a>
             </div>
             <div class="col-3 categoria-img">
+                <a href="categorias/bolsas.php">
                 <img src="assets/img/categoria-4.webp" alt="Bolsas">
                 <p class="categoria-nome">Bolsas</p>
+                </a>
             </div>
             <div class="col-3 categoria-img hidden-categoria">
+                <a href="categorias/livros.php">
                 <img src="assets/img/livro.png" alt="Livros">
                 <p class="categoria-nome">Livros</p>
+                </a>
             </div>
             <div class="col-3 categoria-img hidden-categoria">
+                <a href="categorias/beleza.php">
                 <img src="assets/img/categoria-6.jpg" alt="Beleza e cuidados">
                 <p class="categoria-nome">Beleza e cuidados</p>
+                </a>
             </div>
             <div class="col-3 categoria-img hidden-categoria">
-                <img src="assets/img/categoria-7.jpg" alt="Assesórios">
-                <p class="categoria-nome">Assesórios</p>
+                <a href="categorias/acessorios.php">
+                <img src="assets/img/categoria-7.jpg" alt="Acessórios">
+                <p class="categoria-nome">Acessórios</p>
+                </a>
             </div>
             <div class="col-3 categoria-img hidden-categoria">
+                <a href="categorias/kids.php">
                 <img src="assets/img/categoria-8.jpg" alt="Kids">
                 <p class="categoria-nome">Kids</p>
+                </a>
             </div>
         </div>
         

@@ -966,3 +966,8 @@ button:disabled {
     background: var(--cor-padrao-hover);
     transform: translateY(-2px);
 }
+
+/* Para esconder subcategoria no início */
+.hidden {
+    display: none;
+}

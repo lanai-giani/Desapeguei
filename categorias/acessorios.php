@@ -2,7 +2,7 @@
 session_start();
 require_once __DIR__ . '/../php/conexao.php';
 
-$categoria = 'vestuario';
+$categoria = 'acessorios';
 
 $stmt = $pdo->prepare("SELECT * FROM anuncios WHERE categoria = ?");
 $stmt->execute([$categoria]);
@@ -47,11 +47,8 @@ $anuncios = $stmt->fetchAll();
     </div>
 
     <div class="container">
-        <h1 class="titulo-categoria">Vestuário</h1>
+        <h1 class="titulo-categoria">Acessórios</h1>
 
-        <div class="filtros">
-            <button class="btn-filtro">Feminino</button>
-            <button class="btn-filtro">Masculino</button>
         </div>
 
         <div class="linha produtos-container">
