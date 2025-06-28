@@ -42,7 +42,10 @@ session_start();
                     </ul>
                 </nav>
 
-                <img src="assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
+                <a href="php/carrinho.php">
+                    <img src="assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
+                </a>
+
 
                 <img src="assets/img/menu.png" alt="" class="menuCelular" onclick="menuCelular()">
             </div>
@@ -72,49 +75,43 @@ session_start();
         <div class="carrossel-inner">
             <div class="col-3 categoria-img">
                 <a href="categorias/vestuario.php">
-                    <img src="assets/img/categoria-1.jpg" alt="Vestuário">
+                    <img src="assets/img/vestuario.jpg" alt="Vestuário">
                 </a>
                 <p class="categoria-nome">Vestuário</p>
         </div>
             <div class="col-3 categoria-img">
                     <a href="categorias/calcados.php">
-                        <img src="assets/img/categoria-2.jpg" alt="Calçados">
+                        <img src="assets/img/calcado.jpg" alt="Calçados">
                         <p class="categoria-nome">Calçados</p>
                         </a>
             </div>
             <div class="col-3 categoria-img">
-                <a href="categorias/eletronicos.php">
-                <img src="assets/img/categoria-3.jpg" alt="Eletrônicos">
-                <p class="categoria-nome">Eletrônicos</p>
+                <a href="categorias/bolsas.php">
+                <img src="assets/img/acessorios.jpg" alt="Bolsas">
+                <p class="categoria-nome">Acessórios</p>
                 </a>
             </div>
             <div class="col-3 categoria-img">
-                <a href="categorias/bolsas.php">
-                <img src="assets/img/categoria-4.webp" alt="Bolsas">
-                <p class="categoria-nome">Bolsas</p>
-                </a>
-            </div>
-            <div class="col-3 categoria-img hidden-categoria">
-                <a href="categorias/livros.php">
-                <img src="assets/img/livro.png" alt="Livros">
-                <p class="categoria-nome">Livros</p>
-                </a>
-            </div>
-            <div class="col-3 categoria-img hidden-categoria">
                 <a href="categorias/beleza.php">
-                <img src="assets/img/categoria-6.jpg" alt="Beleza e cuidados">
+                <img src="assets/img/beleza.jpg" alt="Beleza e cuidados">
                 <p class="categoria-nome">Beleza e cuidados</p>
                 </a>
             </div>
             <div class="col-3 categoria-img hidden-categoria">
-                <a href="categorias/acessorios.php">
-                <img src="assets/img/categoria-7.jpg" alt="Acessórios">
-                <p class="categoria-nome">Acessórios</p>
+                <a href="categorias/livros.php">
+                <img src="assets/img/livros.jpg" alt="Livros">
+                <p class="categoria-nome">Livros</p>
+                </a>
+            </div>
+            <div class="col-3 categoria-img hidden-categoria">
+                <a href="categorias/eletronicos.php">
+                <img src="assets/img/eletronico2.jpg" alt="Eletrônicos">
+                <p class="categoria-nome">Eletrônicos</p>
                 </a>
             </div>
             <div class="col-3 categoria-img hidden-categoria">
                 <a href="categorias/kids.php">
-                <img src="assets/img/categoria-8.jpg" alt="Kids">
+                <img src="assets/img/kids.jpg" alt="Kids">
                 <p class="categoria-nome">Kids</p>
                 </a>
             </div>

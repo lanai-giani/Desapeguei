@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar | desapeguei</title>
+    <title>Cadastro | desapeguei</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script> <!-- Mesmo CSS do site -->
 </head>
-
 <body class="pagina-login">
     <div class="navbar">
         <div class="logo">
@@ -19,8 +18,12 @@
 
     <div class="login-container">
         <div class="login-box">
-            <h1>Entrar</h1>
-            <form id="formLogin" action="php/login.php" method="POST">
+            <h1>Cadastre-se</h1>
+            <form action="php/cadastrar.php" method="POST">
+                <div class="input-group">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
                 <div class="input-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" required>
@@ -29,7 +32,11 @@
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" name="senha" required>
                 </div>
-                <button type="submit" class="btn">Acessar</button>
+                <div class="input-group">
+                <label for="confirmar-senha">Confirme sua senha</label>
+                <input type="password" id="confirmar-senha" name="confirmar_senha" required>
+                </div>
+                <button type="submit" class="btn" id="btnCadastro">Criar Conta</button>
                 <div class="google-btn">
                     <div id="g_id_onload"
                         data-client_id="914623445866-fcn65judhjk3hpvmsr0789l9r3b2qvii.apps.googleusercontent.com"
@@ -43,12 +50,7 @@
                     </div>
                 </div>
             </form>
-            
-            <p class="login-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
-            <div class="login-link">
-                <a href="recuperar_senha.html">Esqueceu a senha?</a>
-            </div>
-            </div>
+            <p class="login-link">Já tem uma conta? <a href="login.html">Entrar</a></p>
         </div>
     </div>
     <script src="assets/js/app.js"></script>

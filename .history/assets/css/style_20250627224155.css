@@ -547,13 +547,8 @@ body.pagina-login {
     margin: 0;
     padding: 0;
 }
-/*-------------------cadastro------------*/
-body.pagina-cadastro {
-    background: radial-gradient(var(--cor-padrao-hover), var(--cor-padrao));
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-}
+
+
 
 /* ===== CARROSSEL DE CATEGORIAS ===== */
 .carrossel-categorias {

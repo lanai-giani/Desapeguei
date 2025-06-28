@@ -49,7 +49,11 @@ $anuncios = $stmt->fetchAll();
                 <?php endif; ?>
             </ul>
         </nav>
-        <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30" height="30">
+        
+        <a href="../carrinho.php">
+            <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
+        </a>
+        
         <img src="../assets/img/menu.png" alt="" class="menuCelular" onclick="menuCelular()">
     </div>
 
@@ -76,7 +80,7 @@ $anuncios = $stmt->fetchAll();
                         <h4><?= htmlspecialchars($anuncio['titulo']) ?></h4>
                         <p>R$ <?= number_format($anuncio['preco'], 2, ',', '.') ?></p>
                         <p><?= htmlspecialchars($anuncio['descricao']) ?></p>
-                        <button class="btn">Comprar</button>
+                        <button class="btn">Adicionar ao carrinho</button>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

@@ -50,7 +50,11 @@ $anuncios = $stmt->fetchAll();
                 <?php endif; ?>
             </ul>
         </nav>
-        <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30" height="30">
+
+        <a href="../carrinho.php">
+            <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
+        </a>
+        
         <img src="../assets/img/menu.png" alt="" class="menuCelular" onclick="menuCelular()">
     </div>
 
