@@ -2,6 +2,12 @@
 session_start();
 require_once __DIR__ . '/../php/conexao.php';
 
+if (isset($_SESSION['usuario'])) {
+    echo "<script>localStorage.setItem('usuarioLogado', 'true');</script>";
+} else {
+    echo "<script>localStorage.removeItem('usuarioLogado');</script>";
+}
+
 $categoria = 'calcados';
 $subcategoria = $_GET['subcategoria'] ?? '';
 
@@ -21,10 +27,10 @@ $anuncios = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Calçados | desapeguei</title>
+    <title>Calçados | Desapeguei</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body>
+<body class="vender_style">
 <div class="navbar">
         <div class="logo">
             <a href="../index.php"><img src="../assets/img/logoTeste.png" alt="desapeguei" width="180"></a>
@@ -32,28 +38,30 @@ $anuncios = $stmt->fetchAll();
         <form class="barra-pesquisa" action="#" method="GET">
             <input type="search" name="q" placeholder="O que você procura?">
         </form>
-        <nav>
-            <ul id="menuItens">
-                <li><a href="../index.php">Início</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="../php/verifica_venda.php">Vender</a></li>
-                <?php if (isset($_SESSION['usuario'])): ?>
-                    <li class="dropdown">
-                        <a href="../php/minha_conta.php" class="dropbtn">Minha Conta</a>
-                        <div class="dropdown-content">
-                            <a href="../php/logout.php">Sair</a>
-                        </div>
-                    </li>
-                <?php else: ?>
-                    <li><a href="../cadastro.html">Cadastrar/Entrar</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
+                <nav>
+                    <ul id="menuItens">
+                        <li><a href="index.php">Início</a></li>
+                        <li><a href="vender.php">Vender</a></li>
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                        <li class="dropdown">
+                            <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
+                            <div class="dropdown-content">
+                                <a href="php/enderecos.php">Meus Endereços</a>
+                                <a href="php/minha_loja.php">Minha Loja</a>
+                                <a href="../php/logout.php">Sair</a>
+                            </div>
+                        </li>
+                        <?php else: ?>
+                        <li><a href="cadastro.html">Cadastrar/Entrar</a></li>
+                        <?php endif; ?>
 
-        <a href="../carrinho.php">
+                    </ul>
+                </nav>
+
+        <a href="../php/carrinho.php" id="btnCarrinho">
             <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
         </a>
-        
+
         <img src="../assets/img/menu.png" alt="" class="menuCelular" onclick="menuCelular()">
     </div>
 
@@ -83,7 +91,12 @@ $anuncios = $stmt->fetchAll();
                         <h4><?= htmlspecialchars($anuncio['titulo']) ?></h4>
                         <p>R$ <?= number_format($anuncio['preco'], 2, ',', '.') ?></p>
                         <p><?= htmlspecialchars($anuncio['descricao']) ?></p>
-                        <button class="btn">Adicionar ao carrinho</button>
+
+                        <form action="../php/adicionar_carrinho.php" method="POST" class="form-adicionar">
+                            <input type="hidden" name="id_anuncio" value="<?= $anuncio['id'] ?>">
+                                <button type="submit" class="btn btn-adicionar-carrinho">Adicionar ao carrinho</button>
+                        </form>
+
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

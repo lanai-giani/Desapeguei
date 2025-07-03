@@ -269,6 +269,7 @@ nav ul li a.active::after {
     font-weight: bold;
     font-size: 18px;
     color: var(--cor-btn-fonte);
+    text-decoration: none;
 }
 .col-3 {
     flex-basis: 22%;
@@ -1093,22 +1094,9 @@ button:disabled {
     transform: translateY(-2px);
 }
 
-
-
-
 body.vender_style {
     background: radial-gradient(var(--cor-fonte), var(--cor-padrao));
     margin: 0;
     padding: 0;
     min-height: 100vh;
 }
-
-
-
-
-
-
-
-
-
-

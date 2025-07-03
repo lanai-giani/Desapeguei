@@ -7,7 +7,7 @@
 }
 
 :root {
-    --cor-padrao: #f8b4d7;
+    --cor-padrao: #ffafd9;
     --cor-padrao-hover: #a0a8f1;
     --cor-fonte: #fff;
     --cor-fonte-p: #555;
@@ -802,7 +802,7 @@ button:disabled {
     display: none;
     position: absolute;
     right: 0;
-    background-color: white;
+    background-color: var(--cor-padrao);
     min-width: 180px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     border-radius: 8px;
@@ -1092,3 +1092,15 @@ button:disabled {
     background: var(--cor-padrao-hover);
     transform: translateY(-2px);
 }
+
+
+
+
+body.vender_style {
+    background: radial-gradient(var(--cor-fonte), var(--cor-padrao));
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+

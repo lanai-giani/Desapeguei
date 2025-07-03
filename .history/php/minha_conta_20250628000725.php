@@ -17,7 +17,7 @@ $usuario = $_SESSION['usuario']; // Supondo que esse seja um array com dados do 
     <title>Minha Conta | Desapeguei</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="vender_style">
+<body class= "vender_style">
 <div class="navbar">
         <div class="logo">
             <a href="../index.php"><img src="../assets/img/logoTeste.png" alt="desapeguei" width="180"></a>
@@ -46,7 +46,33 @@ $usuario = $_SESSION['usuario']; // Supondo que esse seja um array com dados do 
                 </nav>
 
 <!-- NAVBAR padrão -->
+<div class="navbar">
+    <div class="logo">
+        <a href="index.php"><img src="assets/img/logo.png" alt="Logo Desapeguei"></a>
+    </div>
+
+    <div class="barra-pesquisa">
+        <form action="busca.php" method="GET">
+            <input type="search" name="q" placeholder="Buscar produtos...">
+        </form>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.php">Início</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn"><?php echo htmlspecialchars($usuario['nome']); ?></a>
+                <div class="dropdown-content">
+                    <a href="produtos_usuario.php">Produtos à venda</a>
+                    <a href="logout.php">Sair</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <img src="assets/img/menu.png" class="menuCelular" onclick="menuCelular()">
 </div>
+
 <!-- Conteúdo da página -->
 <div class="container">
     <h1 class="titulo-categoria">Minha Conta</h1>

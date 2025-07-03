@@ -32,8 +32,10 @@ session_start();
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                        <a href="php/logout.php">Sair</a>
-                        </div>
+                                <a href="php/enderecos.php">Meus Endereços</a>
+                                <a href="php/minha_loja.php">Minha Loja</a>
+                                <a href="php/logout.php">Sair</a>
+                            </div>
                         </li>
                         <?php else: ?>
                         <li><a href="cadastro.html">Cadastrar/Entrar</a></li>
@@ -87,8 +89,8 @@ session_start();
             </div>
             <div class="col-3 categoria-img">
                 <a href="categorias/bolsas.php">
-                <img src="assets/img/acessorios.jpg" alt="Bolsas">
-                <p class="categoria-nome">Acessórios</p>
+                <img src="assets/img/bolsa.jpg" alt="Bolsas">
+                <p class="categoria-nome">Bolsas</p>
                 </a>
             </div>
             <div class="col-3 categoria-img">
@@ -113,6 +115,12 @@ session_start();
                 <a href="categorias/kids.php">
                 <img src="assets/img/kids.jpg" alt="Kids">
                 <p class="categoria-nome">Kids</p>
+                </a>
+            </div>
+            <div class="col-3 categoria-img hidden-categoria">
+                <a href="categorias/acessorios.php">
+                <img src="assets/img/acessorio.jpg" alt="acessorios">
+                <p class="categoria-nome">Acessórios</p>
                 </a>
             </div>
         </div>

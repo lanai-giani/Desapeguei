@@ -2,6 +2,12 @@
 session_start();
 require_once __DIR__ . '/../php/conexao.php';
 
+if (isset($_SESSION['usuario'])) {
+    echo "<script>localStorage.setItem('usuarioLogado', 'true');</script>";
+} else {
+    echo "<script>localStorage.removeItem('usuarioLogado');</script>";
+}
+
 $categoria = 'acessorios';
 $subcategoria = $_GET['subcategoria'] ?? '';
 
@@ -21,10 +27,10 @@ $anuncios = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vestuário | desapeguei</title>
+    <title>Acessórios | Desapeguei</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body>
+<body class="vender_style">
 
     <div class="navbar">
         <div class="logo">
@@ -50,7 +56,7 @@ $anuncios = $stmt->fetchAll();
                 <?php endif; ?>
             </ul>
         </nav>
-        <a href="../php//carrinho.php">
+        <a href="../php/carrinho.php" id="btnCarrinho">
             <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
         </a>
 
@@ -84,7 +90,10 @@ $anuncios = $stmt->fetchAll();
                         <h4><?= htmlspecialchars($anuncio['titulo']) ?></h4>
                         <p>R$ <?= number_format($anuncio['preco'], 2, ',', '.') ?></p>
                         <p><?= htmlspecialchars($anuncio['descricao']) ?></p>
-                        <button class="btn">Adicionar ao carrinho</button>
+
+                        <form action="../php/adicionar_carrinho.php" method="POST" class="form-adicionar">
+                            <input type="hidden" name="id_anuncio" value="<?= $anuncio['id'] ?>">
+                                <button type="submit" class="btn btn-adicionar-carrinho">Adicionar ao carrinho</button>
                         </form>
 
                     </div>

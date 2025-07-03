@@ -46,7 +46,7 @@ $usuario = $_SESSION['usuario']; // Supondo que esse seja um array com dados do 
                 </nav>
 
 <!-- NAVBAR padrão -->
-</div>
+
 <!-- Conteúdo da página -->
 <div class="container">
     <h1 class="titulo-categoria">Minha Conta</h1>

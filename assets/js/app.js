@@ -124,3 +124,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+/*----------------------verificação login botão ao add no carrinho------------------------*/
+document.querySelectorAll('.form-adicionar').forEach(form => {
+    form.addEventListener('submit', function (e) {
+        if (!verificarLogin()) {
+            e.preventDefault();
+            const confirmar = confirm('Para adicionar ao carrinho, você precisa estar logado. Deseja fazer login agora?');
+            if (confirmar) {
+                window.location.href = '../cadastro.html?redirect=carrinho';
+            }
+        }
+    });
+});
+
+const btnCarrinho = document.getElementById('btnCarrinho');
+if (btnCarrinho) {
+    btnCarrinho.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = '../php/verifica_carrinho.php';
+    });
+}

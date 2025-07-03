@@ -13,7 +13,7 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 try {
-    $stmt = $pdo->prepare("SELECT id, nome, email, senha, apelido FROM usuarios WHERE email = ?");
+    $stmt = $pdo->prepare("SELECT id, nome, email, senha FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
     $usuario = $stmt->fetch();
 
@@ -26,7 +26,6 @@ try {
         $_SESSION['usuario'] = [
             'id' => $usuario['id'],
             'nome' => $usuario['nome'],
-            'apelido' => $usuario['apelido'],
             'email' => $usuario['email']
         ];
 
