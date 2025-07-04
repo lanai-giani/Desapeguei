@@ -76,25 +76,29 @@ $anuncios = $stmt->fetchAll();
             <a href="bolsas.php?subcategoria=mala" class="btn-filtro <?= ($_GET['subcategoria'] ?? '') === 'mala' ? 'ativo' : '' ?>">Mala</a>
             <a href="bolsas.php?subcategoria=outro" class="btn-filtro <?= ($_GET['subcategoria'] ?? '') === 'outro' ? 'ativo' : '' ?>">Outro</a>
         </div>
-        <div class="linha produtos-container">
-            <?php if (count($anuncios) > 0): ?>
-                <?php foreach ($anuncios as $anuncio): ?>
-                    <div class="col-4 produto">
-                        <?php
-                            $imagens = explode(',', $anuncio['imagens']);
-                            $imagem_principal = $imagens[0] ?? 'assets/img/placeholder.png';
-                        ?>
-                        <img src="../uploads/<?= htmlspecialchars($imagem_principal) ?>" alt="<?= htmlspecialchars($anuncio['titulo']) ?>">
-                        <h4><?= htmlspecialchars($anuncio['titulo']) ?></h4>
-                        <p>R$ <?= number_format($anuncio['preco'], 2, ',', '.') ?></p>
-                        <p><?= htmlspecialchars($anuncio['descricao']) ?></p>
 
-                        <form action="../php/adicionar_carrinho.php" method="POST" class="form-adicionar">
-                            <input type="hidden" name="id_anuncio" value="<?= $anuncio['id'] ?>">
-                                <button type="submit" class="btn btn-adicionar-carrinho">Adicionar ao carrinho</button>
-                        </form>
+                <div class="linha produtos-container">
+        <?php if (count($anuncios) > 0): ?>
+        <?php foreach ($anuncios as $anuncio): ?>
+            <?php
+                $imagens = explode(',', $anuncio['imagens']);
+                $imagem_principal = $imagens[0] ?? 'placeholder.png';
+            ?>
+            <div class="col-4 produto" onclick="window.location.href='../php/produto.php?id=<?= $anuncio['id'] ?>'">
+                <div class="produto-conteudo">
+                    <img src="../uploads/<?= htmlspecialchars($imagem_principal) ?>" alt="<?= htmlspecialchars($anuncio['titulo']) ?>">
+                    <h4><?= htmlspecialchars($anuncio['titulo']) ?></h4>
+                    <p>R$ <?= number_format($anuncio['preco'], 2, ',', '.') ?></p>
+                    <p><?= htmlspecialchars($anuncio['descricao']) ?></p>
+                </div>
 
-                    </div>
+                <form action="../php/adicionar_carrinho.php" method="POST" class="form-adicionar" onclick="event.stopPropagation();">
+                    <input type="hidden" name="id_anuncio" value="<?= $anuncio['id'] ?>">
+                    <button type="submit" class="btn btn-adicionar-carrinho">Adicionar ao carrinho</button>
+                </form>
+            </div>
+       
+
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>Não há anúncios nessa categoria ainda.</p>

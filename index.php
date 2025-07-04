@@ -20,7 +20,7 @@ session_start();
                     <img src="assets/img/logoTeste.png" alt="desapeguei" width="180px">
                 </div>
 
-                <form class="barra-pesquisa" action="php/buscar.php" method="GET">
+                <form class="barra-pesquisa" action="buscar.php" method="GET">
                     <input type="search" name="q" placeholder="O que você procura?">
                 </form>
 
@@ -75,54 +75,63 @@ session_start();
         <button class="carrossel-btn prev-btn hidden" aria-label="Categorias anteriores">&lt;</button>
         
         <div class="carrossel-inner">
+            
             <div class="col-3 categoria-img">
                 <a href="categorias/vestuario.php">
                     <img src="assets/img/vestuario.jpg" alt="Vestuário">
                 </a>
-                <p class="categoria-nome">Vestuário</p>
-        </div>
+                <p class="categoria-nome">Vestuário</p>      
+            </div>
+
             <div class="col-3 categoria-img">
                     <a href="categorias/calcados.php">
                         <img src="assets/img/calcado.jpg" alt="Calçados">
-                        <p class="categoria-nome">Calçados</p>
-                        </a>
+                    </a>
+                    <p class="categoria-nome">Calçados</p>  
             </div>
+
             <div class="col-3 categoria-img">
                 <a href="categorias/bolsas.php">
                 <img src="assets/img/bolsa.jpg" alt="Bolsas">
-                <p class="categoria-nome">Bolsas</p>
                 </a>
+                <p class="categoria-nome">Bolsas</p>
             </div>
+
             <div class="col-3 categoria-img">
                 <a href="categorias/beleza.php">
                 <img src="assets/img/beleza.jpg" alt="Beleza e cuidados">
-                <p class="categoria-nome">Beleza e cuidados</p>
                 </a>
+                <p class="categoria-nome">Beleza e cuidados</p>
             </div>
+
             <div class="col-3 categoria-img hidden-categoria">
                 <a href="categorias/livros.php">
                 <img src="assets/img/livros.jpg" alt="Livros">
-                <p class="categoria-nome">Livros</p>
                 </a>
+               <p class="categoria-nome">Livros</p>
             </div>
+
             <div class="col-3 categoria-img hidden-categoria">
                 <a href="categorias/eletronicos.php">
                 <img src="assets/img/eletronico2.jpg" alt="Eletrônicos">
-                <p class="categoria-nome">Eletrônicos</p>
                 </a>
+                <p class="categoria-nome">Eletrônicos</p>
             </div>
+
             <div class="col-3 categoria-img hidden-categoria">
                 <a href="categorias/kids.php">
                 <img src="assets/img/kids.jpg" alt="Kids">
-                <p class="categoria-nome">Kids</p>
                 </a>
+                <p class="categoria-nome">Kids</p>
             </div>
+
             <div class="col-3 categoria-img hidden-categoria">
                 <a href="categorias/acessorios.php">
                 <img src="assets/img/acessorio.jpg" alt="acessorios">
-                <p class="categoria-nome">Acessórios</p>
                 </a>
+                <p class="categoria-nome">Acessórios</p>
             </div>
+
         </div>
         
         <button class="carrossel-btn next-btn" aria-label="Próximas categorias">&gt;</button>
