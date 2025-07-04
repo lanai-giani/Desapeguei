@@ -146,3 +146,26 @@ if (btnCarrinho) {
         window.location.href = '../php/verifica_carrinho.php';
     });
 }
+
+/*----------------------google login------------------------*/
+function handleGoogleLogin(response) {
+    const idToken = response.credential;
+
+    fetch('php/google_login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id_token: idToken })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/desapeguei/index.php';
+        } else {
+            alert('Erro ao fazer login com Google: ' + (data.message || 'Erro desconhecido'));
+        }
+    })
+    .catch(err => {
+        console.error('Erro na requisição:', err);
+        alert('Erro na comunicação com o servidor');
+    });
+}

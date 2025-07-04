@@ -93,7 +93,7 @@ $anuncios = $stmt->fetchAll();
 
                         <form action="../php/adicionar_carrinho.php" method="POST" class="form-adicionar">
                             <input type="hidden" name="id_anuncio" value="<?= $anuncio['id'] ?>">
-                                <button type="submit" class="btn btn-adicionar-carrinho">Adicionar ao carrinho</button>
+                                <button type="submit" class="btn-adicionar-carrinho">Adicionar ao carrinho</button>
                         </form>
 
                     </div>
