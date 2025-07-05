@@ -46,13 +46,13 @@ if (isset($_POST['remover'])) {
         <div class="logo">
             <a href="../index.php"><img src="../assets/img/logoTeste.png" alt="desapeguei" width="180"></a>
         </div>
-        <form class="barra-pesquisa" action="#" method="GET">
+        <form class="barra-pesquisa" action="buscar.php" method="GET">
             <input type="search" name="q" placeholder="O que você procura?">
         </form>
                 <nav>
                     <ul id="menuItens">
-                        <li><a href="index.php">Início</a></li>
-                        <li><a href="vender.php">Vender</a></li>
+                        <li><a href="../index.php">Início</a></li>
+                        <li><a href="../vender.php">Vender</a></li>
                         <?php if (isset($_SESSION['usuario'])): ?>
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>

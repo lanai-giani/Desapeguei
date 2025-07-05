@@ -87,7 +87,7 @@ $resultados = $stmt->fetchAll();
                 <div class="grade-produtos">
                     <?php foreach ($resultados as $produto): ?>
                         <div class="produto-card">
-                            <a href="php/produto.php?id=<?= $produto['id'] ?>">
+                            <a href="produto.php?id=<?= $produto['id'] ?>">
                                 <div class="produto-imagem-container">
                                     <img src="../uploads/<?= htmlspecialchars(explode(',', $produto['imagens'])[0]) ?>" alt="<?= htmlspecialchars($produto['titulo']) ?>" class="produto-imagem">
                                 </div>

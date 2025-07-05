@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/conexao.php';
-
+$busca = $_GET['q'] ?? '';
 // Validação segura do ID do produto
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
@@ -36,39 +36,49 @@ try {
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="vender_style">
+<body class="pagina-produto">
 
 <!-- Navbar Melhorada -->
 <!-- Navbar Padronizada -->
-<div class="navbar">
-    <div class="logo">
-        <a href="../index.php"><img src="../assets/img/logoTeste.png" alt="Desapeguei" width="180"></a>
+<div class="banner">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="../index.php">
+                    <img src="../assets/img/logoTeste.png" alt="desapeguei" width="180px">
+                </a>
+            </div>
+
+            <form class="barra-pesquisa" action="buscar.php" method="GET">
+                <input type="search" name="q" placeholder="O que você procura?" value="<?= htmlspecialchars($busca) ?>">
+            </form>
+
+            <nav>
+                <ul id="menuItens">
+                    <li><a href="../index.php">Início</a></li>
+                    <li><a href="../vender.php">Vender</a></li>
+                    <?php if (isset($_SESSION['usuario'])): ?>
+                        <li class="dropdown">
+                            <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
+                            <div class="dropdown-content">
+                                <a href="php/enderecos.php">Meus Endereços</a>
+                                <a href="php/minha_loja.php">Minha Loja</a>
+                                <a href="php/logout.php">Sair</a>
+                            </div>
+                        </li>
+                    <?php else: ?>
+                        <li><a href="cadastro.html">Cadastrar/Entrar</a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+
+            <a href="carrinho.php">
+                <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
+            </a>
+
+            <img src="assets/img/menu.png" alt="menu" class="menuCelular" onclick="menuCelular()">
+        </div>
     </div>
-
-    <form class="barra-pesquisa" action="buscar.php" method="GET">
-        <input type="search" name="q" placeholder="O que você procura?" value="">
-    </form>
-
-    <nav>
-        <ul id="menuItens">
-            <li><a href="../index.php">Início</a></li>
-            <li><a href="../vender.php">Vender</a></li>
-            <li class="dropdown">
-                <a href="#">Minha Conta</a>
-                <div class="dropdown-content">
-                    <a href="#">Meus Endereços</a>
-                    <a href="#">Minha Loja</a>
-                    <a href="../php/logout.php">Sair</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-    <a href="../php/carrinho.php">
-        <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30" height="30">
-    </a>
-
-    <img src="assets/img/menu.png" alt="Menu" class="menuCelular" onclick="menuCelular()">
 </div>
 
 

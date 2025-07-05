@@ -15,7 +15,7 @@ session_start();
             <a href="index.php"><img src="assets/img/logoTeste.png" alt="desapeguei" width="180"></a>
         </div>
 
-        <form class="barra-pesquisa" action="#" method="GET">
+        <form class="barra-pesquisa" action="php/buscar.php" method="GET">
             <input type="search" name="q" placeholder="O que você procura?">
         </form>
 
@@ -39,12 +39,14 @@ session_start();
                     </ul>
                 </nav>
 
-        <img src="assets/img/carrinho (2).png" alt="Carrinho" width="30" height="30">
+        <a href="php/carrinho.php">
+            <img src="assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
+        </a>
         <img src="assets/img/menu.png" alt="Menu" class="menuCelular" onclick="menuCelular()">
     </div>
 
     <div class="container">
-        <h1 class="titulo">Anunciar Produto</h1>
+        <h1 class="titulo-vender">Anunciar Produto</h1>
         
         <form id="formAnuncio" class="form-anuncio" action="php/processa_anuncio.php" method="POST" enctype="multipart/form-data">
             <!-- Fotos -->
