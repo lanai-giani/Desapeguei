@@ -20,7 +20,7 @@ session_start();
                     <img src="assets/img/logoTeste.png" alt="desapeguei" width="180px">
                 </div>
 
-                <form class="barra-pesquisa" action="buscar.php" method="GET">
+                <form class="barra-pesquisa" action="php/buscar.php" method="GET">
                     <input type="search" name="q" placeholder="O que você procura?">
                 </form>
 

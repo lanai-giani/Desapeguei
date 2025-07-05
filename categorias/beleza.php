@@ -30,44 +30,48 @@ $anuncios = $stmt->fetchAll();
     <title>Beleza e cuidados | Desapeguei</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body class="vender_style">
+<body>
 
-    <div class="navbar">
-        <div class="logo">
-            <a href="../index.php"><img src="../assets/img/logoTeste.png" alt="desapeguei" width="180"></a>
-        </div>
-        <form class="barra-pesquisa" action="#" method="GET">
-            <input type="search" name="q" placeholder="O que você procura?">
-        </form>
-                <nav>
-                    <ul id="menuItens">
-                        <li><a href="index.php">Início</a></li>
-                        <li><a href="vender.php">Vender</a></li>
-                        <?php if (isset($_SESSION['usuario'])): ?>
+<div class="banner">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="../index.php"><img src="../assets/img/logoTeste.png" alt="desapeguei" width="180"></a>
+            </div>
+            <form class="barra-pesquisa" action="../php/buscar.php" method="GET">
+                    <input type="search" name="q" placeholder="O que você procura?">
+            </form>
+            <nav>
+                <ul id="menuItens">
+                    <li><a href="../index.php">Início</a></li>
+                    <li><a href="../vender.php">Vender</a></li>
+                    <?php if (isset($_SESSION['usuario'])): ?>
                         <li class="dropdown">
-                            <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
+                            <a href="../php/minha_conta.php" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                                <a href="php/enderecos.php">Meus Endereços</a>
-                                <a href="php/minha_loja.php">Minha Loja</a>
+                                <a href="../php/enderecos.php">Meus Endereços</a>
+                                <a href="../php/minha_loja.php">Minha Loja</a>
                                 <a href="../php/logout.php">Sair</a>
                             </div>
                         </li>
-                        <?php else: ?>
-                        <li><a href="cadastro.html">Cadastrar/Entrar</a></li>
-                        <?php endif; ?>
-
-                    </ul>
-                </nav>
-
-        <a href="../php/carrinho.php" id="btnCarrinho">
-            <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
-        </a>
-
-        <img src="../assets/img/menu.png" alt="" class="menuCelular" onclick="menuCelular()">
+                    <?php else: ?>
+                        <li><a href="../cadastro.html">Cadastrar/Entrar</a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+            <a href="../php/carrinho.php" id="btnCarrinho">
+                <img src="../assets/img/carrinho (2).png" alt="Carrinho" width="30px" height="30px">
+            </a>
+            <img src="../assets/img/menu.png" alt="" class="menuCelular" onclick="menuCelular()">
+        </div>
     </div>
+</div>
 
+
+<div class="pagina-busca">
     <div class="container">
         <h1 class="titulo-categoria">Beleza e cuidados</h1>
+
         <div class="filtros">
             <a href="beleza.php" class="btn-filtro <?= empty($_GET['subcategoria']) ? 'ativo' : '' ?>">Todos</a>
             <a href="beleza.php?subcategoria=maquiagem" class="btn-filtro <?= ($_GET['subcategoria'] ?? '') === 'maquiagem' ? 'ativo' : '' ?>">Maquiagem</a>
@@ -103,11 +107,16 @@ $anuncios = $stmt->fetchAll();
 
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>Não há anúncios nessa categoria ainda.</p>
+                <div class="nenhum-resultado">
+                    <h2>Nenhum produto encontrado</h2>
+                    <p>Não há anúncios nesta categoria ainda.</p>
+                    <a href="../index.php" class="btn">Voltar à página inicial</a>
+                </div>
             <?php endif; ?>
         </div>
         
     </div>
+</div>
     
     <footer class="rodape">
         <div class="container">
