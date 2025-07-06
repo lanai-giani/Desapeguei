@@ -111,6 +111,7 @@ nav ul li a{
     margin:auto;
     padding-left: 25px;
     padding-right: 24px;
+    margin-bottom: 80px
 }
 
 .col-3{
@@ -221,16 +222,7 @@ nav ul li a.active::after {
     background-color: var(--cor-padrao);
 }
 
-/* Ajuste para mobile */
-@media only screen and (max-width: 800px) {
-    nav ul li a::after {
-        display: none;
-    }
-    
-    nav ul li:hover a {
-        color: var(--cor-padrao);
-    }
-}
+
 
 /* Mantendo o estilo do dropdown existente */
 .dropdown:hover .dropbtn::after {
@@ -293,8 +285,13 @@ nav ul li a.active::after {
 }
 
 .col-4 img{
+    width: 170px;
+    height: 170px;
     width: 100%;
+    display: block;
     object-fit: cover;
+    margin: 0 auto;
+    border-radius: 8px;
     object-position: center;
 }
 .titulo{
@@ -403,7 +400,7 @@ ul{
     display: none;
 }
 
-/*-------------listagem de produtps-------------*/
+
 
 
 
@@ -560,70 +557,8 @@ body.pagina-cadastro {
     padding: 0;
 }
 
-/* ===== CARROSSEL DE CATEGORIAS ===== */
-.carrossel-categorias {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 30px 0;
-}
-
-.carrossel-container {
-    width: 100%;
-    overflow: hidden;
-}
-
-.carrossel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
-}
-
-.carrossel-btn {
-    background: var(--cor-padrao);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    z-index: 1;
-}
-
-.carrossel-btn:hover {
-    background: var(--cor-padrao-hover);
-    transform: scale(1.1);
-}
-
-.categoria-nome a {
-    text-decoration: none;
-    color: var(--cor-btn-fonte);
-}
-
-.categoria-nome a:hover {
-    color: var(--cor-padrao-hover);
-}
-
-.prev-btn {
-    margin-right: 15px;
-}
-
-.next-btn {
-    margin-left: 15px;
-}
-
-/* Esconde o botão quando não houver mais itens */
-.carrossel-btn.hidden {
-    visibility: hidden;
-}
-
-/* ===== CARROSSEL DE CATEGORIAS ===== */
+/*
+/* =========== CARROSSEL DE CATEGORIAS ============== */
 .carrossel-container {
     display: flex;
     align-items: center;
@@ -635,13 +570,13 @@ body.pagina-cadastro {
 .carrossel-inner {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Mantém o espaçamento original */
+    justify-content: space-around; 
     width: 100%;
-    max-width: 1000px; /* Mesma largura do .corpo-categorias */
+    max-width: 1000px; 
     margin: 0 auto;
 }
 
-/* Mantém todas as outras regras do carrossel */
+
 .carrossel-btn {
     background: var(--cor-padrao);
     color: white;
@@ -670,7 +605,7 @@ body.pagina-cadastro {
 }
 
 
-/* ESTILOS PARA PÁGINA DE CATEGORIA */
+/* ===================PÁGINA DE CATEGORIA===================== */
 .titulo-categoria {
     text-align: center;
     margin: 30px 0;
@@ -693,8 +628,8 @@ body.pagina-cadastro {
     cursor: pointer;
 }
 .btn-filtro:hover {
-    color: #A85581; /* Mantém cor no hover (opcional) */
-    background-color: rgba(168, 85, 129, 0.1); /* leve destaque no hover */
+    color: #A85581; 
+    background-color: rgba(168, 85, 129, 0.1);
 }
 .produto {
     text-align: center;
@@ -711,38 +646,6 @@ body.pagina-cadastro {
 
 
 
-
-/* Estilos para a página de vender */
-.form-anuncio {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.btn-anunciar {
-    background: var(--cor-padrao);
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
-}
-
-.preview-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.preview-container img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
 
 
 /* Loader */
@@ -794,13 +697,11 @@ button:disabled {
 
 
 /* ------------------------------- caixinha dropbox -------------------------------------*/
-/* Dropdown container - Mantendo seu estilo existente */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Botão principal do dropdown - Integrado ao seu tema */
 .dropbtn {
     cursor: pointer;
     text-decoration: none;
@@ -815,7 +716,6 @@ button:disabled {
 }
 
 
-/* Conteúdo do dropdown - estilo harmonizado */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -832,7 +732,6 @@ button:disabled {
     margin-top: 5px;
 }
 
-/* Itens do dropdown */
 .dropdown-content a {
     color: var(--cor-btn-fonte);
     padding: 12px 16px;
@@ -843,7 +742,6 @@ button:disabled {
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Primeiro e último itens com bordas arredondadas */
 .dropdown-content a:first-child {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -855,14 +753,12 @@ button:disabled {
     border-bottom: none;
 }
 
-/* Efeito hover nos itens */
 .dropdown-content a:hover {
     background-color: var(--cor-padrao);
     color: white;
     padding-left: 20px;
 }
 
-/* Efeito hover no dropdown */
 .dropdown:hover .dropdown-content {
     display: block;
     opacity: 1;
@@ -880,8 +776,8 @@ button:disabled {
     position: relative;
     text-align: center;
     font-size: 36px;
-    color: var(--cor-btn-fonte); /* cor do texto, ajuste se quiser */
-    margin: 40px 0 60px; /* margem acima e abaixo */
+    color: var(--cor-btn-fonte); 
+    margin: 40px 0 60px; 
     font-weight: 600;
 }
 
@@ -895,14 +791,14 @@ button:disabled {
     margin: 10px auto 0; 
 }
 
-/* Estilos adicionais para o formulário de venda */
 .form-anuncio {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
+    margin-bottom: 100px;
     padding: 30px;
     background: white;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .foto-section {
@@ -927,7 +823,7 @@ button:disabled {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    font-size: 20px; /* Diminui o texto */
+    font-size: 20px; 
 }
 
 .radio-group input[type="radio"] {
@@ -1247,7 +1143,6 @@ body.vender_style {
 body.pagina-produto {
     background-color: var(--cor-fonte);
 }
-/* ===== ESTILOS GERAIS ===== */
 .produto-detalhes-container {
     max-width: 1200px;
     margin: 30px auto;
@@ -1257,7 +1152,6 @@ body.pagina-produto {
     gap: 40px;
 }
 
-/* ===== GALERIA DE IMAGENS ===== */
 .galeria {
     flex: 1;
     min-width: 300px;
@@ -1331,7 +1225,6 @@ body.pagina-produto {
     transform: scale(1.05);
 }
 
-/* ===== INFORMAÇÕES DO PRODUTO ===== */
 .info {
     flex: 1;
     min-width: 300px;
@@ -1376,7 +1269,7 @@ body.pagina-produto {
     font-weight: bold;
 }
 
-/* FORMULÁRIO DE COMPRA */
+/* =================FORMULÁRIO DE COMPRA =======================*/
 .form-comprar {
     display: flex;
     flex-direction: column;
@@ -1585,7 +1478,6 @@ body.pagina-produto {
     margin-top: 5px;
 }
 
-/* Estilo para quando não há resultados */
 .nenhum-resultado {
     text-align: center;
     padding: 50px 20px;

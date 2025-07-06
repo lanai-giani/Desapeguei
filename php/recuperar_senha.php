@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/../conexao.php';
 
-// Carrega as classes do PHPMailer
 require '../php/PHPMailer/src/PHPMailer.php';
 require '../php/PHPMailer/src/SMTP.php';
 require '../php/PHPMailer/src/Exception.php';
@@ -23,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $update = $pdo->prepare("UPDATE usuarios SET reset_token = ?, reset_expira = ? WHERE email = ?");
             $update->execute([$token, $expira, $email]);
 
-            // Agora faz o envio do e-mail
             $mail = new PHPMailer(true);
 
             try {

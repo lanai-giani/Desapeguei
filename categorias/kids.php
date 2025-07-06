@@ -71,7 +71,7 @@ $anuncios = $stmt->fetchAll();
 
 <div class="pagina-busca">
     <div class="container">
-        <h1 class="titulo-categoria">Kids</h1>
+        <h1 class="titulo">Kids</h1>
 
         <div class="filtros">
             <a href="kids.php" class="btn-filtro <?= empty($_GET['subcategoria']) ? 'ativo' : '' ?>">Todos</a>
@@ -130,10 +130,10 @@ $anuncios = $stmt->fetchAll();
             </div>
             <div class="rodape-col-2"> 
                 <img src="../assets/img/logoTeste.png" alt="">
-                <p>fvfdvf</p>
+                <p>Desapeguei</p>
             </div>
             <div class="rodape-col-3"> 
-                <h3>Mais informações</h3>
+                <h3>Mais informações:</h3>
                 <ul>
                     <li>Blogs</li>
                     <li>Política de privacidade</li>
@@ -141,7 +141,8 @@ $anuncios = $stmt->fetchAll();
                 </ul>
             </div>
             <div class="rodape-col-4">
-                <h3>Nossas redes sociais</h3>
+                <h3>Nossas redes sociais:
+</h3>
                 <ul>
                     <li>Facebook</li>
                     <li>Instagram</li>
@@ -151,7 +152,7 @@ $anuncios = $stmt->fetchAll();
             </div>
         </div>
         <hr>
-        <p class="direitos"> &#169; Todos os direitos reservados a desapeguei </p>
+        <p class="direitos"> &#169; Todos os direitos reservados a Desapeguei </p>
     </div>
 </footer>
 

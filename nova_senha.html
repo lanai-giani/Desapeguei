@@ -64,17 +64,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Obtém parâmetros da URL
+
             const urlParams = new URLSearchParams(window.location.search);
             const token = urlParams.get('token');
             const error = urlParams.get('erro');
             
-            // Define o token no formulário
             if (token) {
                 document.getElementById('token').value = token;
             }
             
-            // Mapeamento de mensagens de erro
             const errorMessages = {
                 'token_invalido': 'Link inválido ou expirado. Solicite um novo link.',
                 'senhas_nao_coincidem': 'As senhas não coincidem.',
@@ -86,26 +84,22 @@
                 showError(errorMessages[error]);
             }
             
-            // Validação do formulário
             document.getElementById('passwordForm').addEventListener('submit', function(e) {
                 const senha = document.getElementById('senha').value;
                 const confirmarSenha = document.getElementById('confirmar_senha').value;
                 
-                // Verifica se as senhas coincidem
                 if (senha !== confirmarSenha) {
                     e.preventDefault();
                     showError('As senhas não coincidem.');
                     return;
                 }
                 
-                // Verifica força da senha
                 if (senha.length < 8 || !/[a-zA-Z]/.test(senha) || !/[0-9]/.test(senha)) {
                     e.preventDefault();
                     showError('A senha deve ter pelo menos 8 caracteres, incluindo letras e números.');
                     return;
                 }
                 
-                // Verifica se há token
                 if (!document.getElementById('token').value) {
                     e.preventDefault();
                     showError('Link inválido. Acesse através do e-mail de recuperação.');
@@ -113,7 +107,6 @@
                 }
             });
             
-            // Função para exibir mensagens de erro
             function showError(message) {
                 const errorContainer = document.getElementById('errorContainer');
                 errorContainer.innerHTML = `
@@ -122,10 +115,8 @@
                     </div>
                 `;
                 
-                // Rolagem suave para o erro
                 errorContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                // Remove a mensagem após 8 segundos
                 setTimeout(() => {
                     if (errorContainer.innerHTML.includes(message)) {
                         errorContainer.innerHTML = '';

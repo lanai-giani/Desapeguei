@@ -16,14 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Regras mínimas de senha 
     if (strlen($senha) < 8 || !preg_match('/[a-zA-Z]/', $senha) || !preg_match('/[0-9]/', $senha)) {
         header("Location: ../nova_senha.html?erro=senha_fraca&token=$token");
         exit();
     }
 
     try {
-        // Verifica se o token é válido
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE reset_token = ? AND reset_expira > NOW()");
         $stmt->execute([$token]);
         $usuario = $stmt->fetch();

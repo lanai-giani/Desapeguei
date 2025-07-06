@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once __DIR__ . '/conexao.php';
+
 $busca = $_GET['q'] ?? '';
-// Validação segura do ID do produto
+
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 if (!$id) {
@@ -16,7 +17,7 @@ try {
     $produto = $stmt->fetch();
 
     if (!$produto) {
-        header('Location: 404.php'); // Página de erro personalizada
+        header('Location: 404.php'); 
         exit;
     }
 
@@ -38,8 +39,6 @@ try {
 </head>
 <body class="pagina-produto">
 
-<!-- Navbar Melhorada -->
-<!-- Navbar Padronizada -->
 <div class="banner">
     <div class="container">
         <div class="navbar">
@@ -61,8 +60,7 @@ try {
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                                <a href="php/enderecos.php">Meus Endereços</a>
-                                <a href="php/minha_loja.php">Minha Loja</a>
+                                <a href="minha_loja.php">Minha Loja</a>
                                 <a href="php/logout.php">Sair</a>
                             </div>
                         </li>
@@ -82,9 +80,8 @@ try {
 </div>
 
 
-<!-- Conteúdo Principal -->
 <main class="produto-detalhes-container">
-    <!-- Galeria Melhorada -->
+
     <section class="galeria">
         <div class="imagem-principal">
             <img id="imagemPrincipal" src="../uploads/<?= htmlspecialchars($imagens[0]) ?>" 
@@ -102,7 +99,6 @@ try {
         </div>
     </section>
 
-    <!-- Informações do Produto -->
     <section class="info">
         <h1><?= htmlspecialchars($produto['titulo']) ?></h1>
 
@@ -145,21 +141,19 @@ try {
 
 <script>
     function mudarImagem(img) {
-        // Atualiza imagem principal
         document.getElementById('imagemPrincipal').src = img.src;
         
-        // Atualiza classe ativa
         document.querySelectorAll('.miniaturas img').forEach(el => {
             el.classList.remove('ativa');
         });
         img.classList.add('ativa');
         
-        // Efeito visual
         img.parentElement.scroll({
             left: img.offsetLeft - (img.parentElement.offsetWidth / 2) + (img.offsetWidth / 2),
             behavior: 'smooth'
         });
     }
+    
 </script>
 
 <script src="assets/js/app.js"></script>

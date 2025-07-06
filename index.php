@@ -30,9 +30,8 @@ session_start();
                         <li><a href="vender.php">Vender</a></li>
                         <?php if (isset($_SESSION['usuario'])): ?>
                         <li class="dropdown">
-                            <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
+                            <a href="#" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                                <a href="php/enderecos.php">Meus Endereços</a>
                                 <a href="php/minha_loja.php">Minha Loja</a>
                                 <a href="php/logout.php">Sair</a>
                             </div>
@@ -54,12 +53,12 @@ session_start();
 
             <div class="linha">
                 <div class="col-2">
-                    <h1>Escolha diminuir o consumo</h1>
+                    <h1>Desapegue com propósito</h1>
                     <p>
-                        Aqui, você pode vender aquelas peças que estão esquecidas no guarda-roupa há muito tempo e comprar novas ou usadas de várias marcas. <br>
-                        Explore nosso site e descubra uma variedade incrível de produtos.
+                        Dê uma nova vida às suas peças esquecidas e descubra achados incríveis de quem também escolheu desapegar.
+                        Compre e venda com propósito — aqui, cada escolha faz a diferença.
                     </p>
-                    <br><a href="" class="btn">Mais informações &#10157;</a>
+                    <br><a href="" class="btn">Mais informações: &#10157;</a>
                 </div>
 
                 <div class="col-2">
@@ -142,44 +141,44 @@ session_start();
             <h2 class="titulo">Livros em destaque</h2>
             <div class="linha">
                 <div class="col-4">
-                    <img src="assets/img/produto-1.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 1.jpg" alt="">
+                    <h4>Orgulho e preconceito</h4>
+                    <p>R$ 25,00</p>
                 </div>
                 <div class="col-4">
-                    <img src="assets/img/produto-2.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 2.jpg" alt="">
+                    <h4>Helena</h4>
+                    <p>R$ 20,00</p>
                 </div>
                 <div class="col-4">
-                    <img src="assets/img/produto-3.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 3.jpg" alt="">
+                    <h4>BTK Profile:Máscara da maldade </h4>
+                    <p>R$ 67,00</p>
                 </div>
                 <div class="col-4">
-                    <img src="assets/img/produto-4.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 4.jpg" alt="">
+                    <h4>Sofia Copola Archive</h4>
+                    <p>R$ 119,99</p>
                 </div>
                 <div class="col-4">
-                    <img src="assets/img/produto-4.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 5.jpg" alt="">
+                    <h4>Persuasão</h4>
+                    <p>R$54,90</p>
                 </div>
                 <div class="col-4">
-                    <img src="assets/img/produto-4.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 6.jpg" alt="">
+                    <h4>Valley of the dolls</h4>
+                    <p>R$ 58,00</p>
                 </div>
                 <div class="col-4">
-                    <img src="assets/img/produto-4.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 7.jpg" alt="">
+                    <h4>My Year of Rest and Relaxation</h4>
+                    <p>R$ 82,50</p>
                 </div>
                 <div class="col-4">
-                    <img src="assets/img/produto-4.jpg" alt="">
-                    <h4>O corvo</h4>
-                    <p>R$ 10,00</p>
+                    <img src="assets/img/livro 8.jpg" alt="">
+                    <h4>A little princess</h4>
+                    <p>R$ 29,99</p>
                 </div>
             </div>
         </div>
@@ -192,9 +191,10 @@ session_start();
                     </div>
                     <div class="col-2">
                         <p>Ofertas exclusivas</p>
-                        <h1>Seja um vendedor e ganhe descontos incríveis</h1>
-                        <small>Sabe aquela peça que está parada no seu guarda-roupa que você não usa mais? Desapegue e faça ela virar dinheiro</small>
-                        <br><br><a href="" class="btn">Anuncie seu produto aqui! &#8594;</a>
+                        <h1>Seja um vendedor e ganhe descontos incríveis!</h1>
+                        <small>Transforme o que está parado no seu guarda-roupa em dinheiro e ainda ganhe desconto!
+                                Desapegue do que você não usa mais e aproveite para renovar seu estilo com economia.</small>
+                        <br><br><a href="vender.php" class="btn">Anuncie seu produto aqui!</a>
                     </div>
                 </div>
             </div>
@@ -214,11 +214,11 @@ session_start();
 
                     <div class="rodape-col-2"> 
                         <img src="assets/img/logoTeste.png" alt="">
-                        <p>fvfdvf</p>
+                        <p>Desapeguei</p>
                     </div>
 
                     <div class="rodape-col-3"> 
-                        <h3>Mais informações</h3>
+                        <h3>Mais informações:</h3>
                         <ul>
                             <li>Blogs</li>
                             <li>Política de privacidade</li>
@@ -227,7 +227,8 @@ session_start();
                     </div>
 
                     <div class="rodape-col-4">
-                        <h3>Nossas redes sociais</h3>
+                        <h3>Nossas redes sociais:
+</h3>
                         <ul>
                             <li>Facebook</li>
                             <li>Instagram</li>
@@ -237,7 +238,7 @@ session_start();
                     </div>
                 </div>
             <hr>
-            <p class="direitos"> &#169; Todos os direitos reservados a desapeguei </p>
+            <p class="direitos"> &#169; Todos os direitos reservados a Desapeguei </p>
             </div>
         </footer>
 

@@ -2,32 +2,28 @@
 session_start();
 require_once 'conexao.php';
 
-// Verifica se há carrinho
 $carrinho = $_SESSION['carrinho'] ?? [];
 
 $anuncios = [];
 $total = 0;
 
 if (!empty($carrinho)) {
-    // Prepara os placeholders (?, ?, ?) dinamicamente
     $placeholders = implode(',', array_fill(0, count($carrinho), '?'));
 
     $stmt = $pdo->prepare("SELECT * FROM anuncios WHERE id IN ($placeholders)");
     $stmt->execute($carrinho);
     $anuncios = $stmt->fetchAll();
     
-    // Calcula o total
     foreach ($anuncios as $item) {
         $total += $item['preco'];
     }
 }
 
-// Processa remoção de item
 if (isset($_POST['remover'])) {
     $id_remover = $_POST['id_remover'];
     if (($key = array_search($id_remover, $carrinho)) !== false) {
         unset($carrinho[$key]);
-        $_SESSION['carrinho'] = array_values($carrinho); // Reindexa o array
+        $_SESSION['carrinho'] = array_values($carrinho); 
         header("Location: carrinho.php");
         exit();
     }
@@ -57,8 +53,7 @@ if (isset($_POST['remover'])) {
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                                <a href="php/enderecos.php">Meus Endereços</a>
-                                <a href="php/minha_loja.php">Minha Loja</a>
+                                <a href="../php/minha_loja.php">Minha Loja</a>
                                 <a href="../php/logout.php">Sair</a>
                             </div>
                         </li>
@@ -126,9 +121,49 @@ if (isset($_POST['remover'])) {
             </form>
         <?php endif; ?>
     </div>
+<footer class="rodape">
+            <div class="container">
+                <div class="linha">
+                    <div class="rodape-col-1"> 
+                        <h3>Baixe o desapeguei no seu Smartphone</h3>
+                        <div class="app-logo">
+                            <img src="../assets/img/google.png" alt="">
+                            <img src="../assets/img/apple.png" alt="">
+    
+                        </div>
+                    </div>
 
+                    <div class="rodape-col-2"> 
+                        <img src="../assets/img/logoTeste.png" alt="">
+                        <p>Desapeguei</p>
+                    </div>
+
+                    <div class="rodape-col-3"> 
+                        <h3>Mais informações:</h3>
+                        <ul>
+                            <li>Blogs</li>
+                            <li>Política de privacidade</li>
+                            <li>Contatos</li>
+                        </ul>
+                    </div>
+
+                    <div class="rodape-col-4">
+                        <h3>Nossas redes sociais:
+</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Instagram</li>
+                            <li>Twitter</li>
+                            <li>TikTok</li>
+                        </ul>
+                    </div>
+                </div>
+            <hr>
+            <p class="direitos"> &#169; Todos os direitos reservados a Desapeguei </p>
+            </div>
+        </footer>
     <script>
-        // Selecionar/deselecionar todos os itens
+
         document.getElementById('selecionar-todos').addEventListener('change', function() {
             const checkboxes = document.querySelectorAll('.check-item:not(#selecionar-todos)');
             checkboxes.forEach(checkbox => {
@@ -137,7 +172,6 @@ if (isset($_POST['remover'])) {
             calcularTotal();
         });
 
-        // Calcular total quando itens são selecionados/deselecionados
         document.querySelectorAll('.check-item:not(#selecionar-todos)').forEach(checkbox => {
             checkbox.addEventListener('change', calcularTotal);
         });

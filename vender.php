@@ -27,7 +27,6 @@ session_start();
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                                <a href="php/enderecos.php">Meus Endereços</a>
                                 <a href="php/minha_loja.php">Minha Loja</a>
                                 <a href="php/logout.php">Sair</a>
                             </div>
@@ -47,7 +46,7 @@ session_start();
 
     <div class="container">
         <h1 class="titulo-vender">Anunciar Produto</h1>
-        
+
         <form id="formAnuncio" class="form-anuncio" action="php/processa_anuncio.php" method="POST" enctype="multipart/form-data">
             <!-- Fotos -->
             <div class="input-group foto-section">
@@ -115,7 +114,47 @@ session_start();
             <button type="submit" class="btn btn-anunciar">Publicar Anúncio</button>
         </form>
     </div>
+<footer class="rodape">
+            <div class="container">
+                <div class="linha">
+                    <div class="rodape-col-1"> 
+                        <h3>Baixe o desapeguei no seu Smartphone</h3>
+                        <div class="app-logo">
+                            <img src="assets/img/google.png" alt="">
+                            <img src="assets/img/apple.png" alt="">
+    
+                        </div>
+                    </div>
 
+                    <div class="rodape-col-2"> 
+                        <img src="assets/img/logoTeste.png" alt="">
+                        <p>Desapeguei</p>
+                    </div>
+
+                    <div class="rodape-col-3"> 
+                        <h3>Mais informações:</h3>
+                        <ul>
+                            <li>Blogs</li>
+                            <li>Política de privacidade</li>
+                            <li>Contatos</li>
+                        </ul>
+                    </div>
+
+                    <div class="rodape-col-4">
+                        <h3>Nossas redes sociais:
+</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Instagram</li>
+                            <li>Twitter</li>
+                            <li>TikTok</li>
+                        </ul>
+                    </div>
+                </div>
+            <hr>
+            <p class="direitos"> &#169; Todos os direitos reservados a Desapeguei </p>
+            </div>
+        </footer>
  
     <script src="assets/js/app.js"></script>
     

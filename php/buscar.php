@@ -23,7 +23,6 @@ $resultados = $stmt->fetchAll();
 </head>
 <body>
 
-<!-- ✅ NAVBAR completa -->
 <div class="banner">
     <div class="container">
         <div class="navbar">
@@ -45,8 +44,7 @@ $resultados = $stmt->fetchAll();
                         <li class="dropdown">
                             <a href="php/minha_conta.php" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                                <a href="php/enderecos.php">Meus Endereços</a>
-                                <a href="php/minha_loja.php">Minha Loja</a>
+                                <a href="../php/minha_loja.php">Minha Loja</a>
                                 <a href="php/logout.php">Sair</a>
                             </div>
                         </li>
@@ -104,13 +102,12 @@ $resultados = $stmt->fetchAll();
             <div class="nenhum-resultado">
                 <h2>Nenhum produto encontrado</h2>
                 <p>Não encontramos resultados para "<?= htmlspecialchars($busca) ?>". Tente outros termos.</p>
-                <a href="index.php" class="btn">Voltar à página inicial</a>
+                <a href="../index.php" class="btn">Voltar à página inicial</a>
             </div>
         <?php endif; ?>
     </div>
 </div>
 
-<!-- Rodapé opcional aqui -->
 <script src="assets/js/app.js"></script>
 </body>
 </html>

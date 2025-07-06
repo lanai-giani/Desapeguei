@@ -4,7 +4,6 @@ echo '<pre>';
 print_r($_SESSION['usuario']);
 echo '</pre>';
 
-// 1. Verificar se o usuário está logado
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../cadastro.html");
     exit;
@@ -28,7 +27,6 @@ function normalizarSubcategoria($str) {
     return $str;
 }
 
-// Normaliza o valor da subcategoria
 $subcategoria = normalizarSubcategoria($subcategoria);
 
 if (!$titulo || !$descricao || !$estado || !$categoria || !$subcategoria || $preco === '' || !$usuario_id) {

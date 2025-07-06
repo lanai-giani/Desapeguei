@@ -12,7 +12,7 @@ if ($senha !== $confirmar_senha) {
     header("Location: " . $base_url . "cadastro.html?erro=senhas_nao_coincidem");
     exit();
 }
-/*criptografia da senha*/
+/*---criptografia da senha----*/
 $senha_hash = password_hash($senha, PASSWORD_BCRYPT);
 
 try {

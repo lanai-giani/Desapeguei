@@ -38,34 +38,29 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Verifica parâmetros da URL
+
             const urlParams = new URLSearchParams(window.location.search);
             const error = urlParams.get('erro');
             
-            // Mapeamento de mensagens de erro
             const errorMessages = {
                 'email_nao_encontrado': 'E-mail não encontrado em nosso sistema.',
                 'token_invalido': 'Link de recuperação inválido ou expirado.',
                 'envio_falhou': 'Falha ao enviar e-mail. Tente novamente mais tarde.'
             };
             
-            // Se houver erro na URL, exibe a mensagem
             if (error && errorMessages[error]) {
                 showError(errorMessages[error]);
             }
             
-            // Intercepta o formulário para validação
             document.getElementById('recoveryForm').addEventListener('submit', function(e) {
                 const email = document.getElementById('email').value;
                 
-                // Validação simples do e-mail
                 if (!email.includes('@') || !email.includes('.')) {
                     e.preventDefault();
                     showError('Por favor, insira um e-mail válido.');
                 }
             });
             
-            // Função para exibir erros
             function showError(message) {
                 const errorContainer = document.getElementById('errorContainer');
                 errorContainer.innerHTML = `
@@ -74,7 +69,6 @@
                     </div>
                 `;
                 
-                // Remove a mensagem após 5 segundos
                 setTimeout(() => {
                     errorContainer.innerHTML = '';
                 }, 5000);
