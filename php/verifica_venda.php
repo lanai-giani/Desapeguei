@@ -7,7 +7,7 @@ if (isset($_SESSION['usuario'])) {
 } else {
     echo "<script>
         alert('Você precisa estar logado para vender.');
-        window.location.href = '../login.html';
+        window.location.href = '/login.php';
     </script>";
     exit();
 }

@@ -20,7 +20,7 @@ try {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$nome, $email, $senha_hash]);
     
-    header("Location: " . $base_url . "login.html?cadastro=sucesso");
+    header("Location: " . $base_url . "php/login.php?cadastro=sucesso");
     exit();
 
 } catch (PDOException $e) {

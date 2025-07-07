@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $update = $pdo->prepare("UPDATE usuarios SET senha = ?, reset_token = NULL, reset_expira = NULL WHERE id = ?");
         $update->execute([$senhaHash, $usuario['id']]);
 
-        header("Location: ../login.html?senha_alterada=1");
+        header("Location: ../login.php?senha_alterada=1");
         exit();
 
     } catch (PDOException $e) {
