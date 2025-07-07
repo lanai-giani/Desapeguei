@@ -5,7 +5,7 @@ require_once 'conexao.php';
 
 
 if (empty($_POST['email']) || empty($_POST['senha'])) {
-    header("Location: " . $base_url . "login.html?erro=vazio");
+    header("Location: " . $base_url . "login.php?erro=vazio");
     exit();
 }
 
@@ -39,7 +39,7 @@ try {
 } catch (PDOException $e) {
     error_log("Erro no login: " . $e->getMessage());
     
-    header("Location: " . $base_url . "login.html?erro=servidor");
+    header("Location: " . $base_url . "login.php?erro=servidor");
     exit();
 }
 ?>

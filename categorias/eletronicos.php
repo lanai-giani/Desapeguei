@@ -48,7 +48,6 @@ $anuncios = $stmt->fetchAll();
                         <li class="dropdown">
                             <a href="../php/minha_conta.php" class="dropbtn">Minha Conta</a>
                             <div class="dropdown-content">
-                                <a href="../php/enderecos.php">Meus Endereços</a>
                                 <a href="../php/minha_loja.php">Minha Loja</a>
                                 <a href="../php/logout.php">Sair</a>
                             </div>

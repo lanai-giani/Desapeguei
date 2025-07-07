@@ -12,7 +12,11 @@ if (!$id) {
 }
 
 try {
-    $stmt = $pdo->prepare("SELECT * FROM anuncios WHERE id = ?");
+    $stmt = $pdo->prepare("
+    SELECT anuncios.*, usuarios.nome 
+    FROM anuncios 
+    JOIN usuarios ON anuncios.usuario_id = usuarios.id 
+    WHERE anuncios.id = ?");
     $stmt->execute([$id]);
     $produto = $stmt->fetch();
 
@@ -133,7 +137,7 @@ try {
                 <?php if (!empty($produto['marca'])): ?>
                     <li><strong>Marca:</strong> <?= htmlspecialchars($produto['marca']) ?></li>
                 <?php endif; ?>
-                <li><strong>Vendido por:</strong> <?= htmlspecialchars($produto['vendedor_nome'] ?? 'Loja Desapeguei') ?></li>
+                    <li><strong>Vendido por:</strong> <?= htmlspecialchars($produto['nome'] ?? 'Loja Desapeguei') ?></li>
             </ul>
         </div>
     </section>
