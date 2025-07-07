@@ -23,7 +23,7 @@
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Frontend:** HTML5, CSS3, JavaScript
 - **Backend:** PHP 7+
@@ -32,7 +32,7 @@
 - **Hospedagem Local:** XAMPP / WAMP
 
 ---
-## Como Rodar o Projeto Localmente
+## Como Rodar o Projeto Localmente:
 
 ### Pré-requisitos
 
@@ -46,16 +46,20 @@
    git clone https://github.com/seu-usuario/desapeguei.git
 
 2. **Mova a pasta para o diretório do servidor local**
-   No XAMPP, mova a pasta desapeguei para:
-    C:\xampp\htdocs\
+   Mova a pasta desapeguei para:
+   C:\xampp\htdocs\
 
 3. **Inicie o XAMPP**
   - Execute o XAMPP Control Panel
-  - Ative os módulos: Apache
-                      MySQL
+  - Ative os módulos: Apache e MySQL
 
+4. **Configure o banco de dados**
+- Acesse: http://localhost/phpmyadmin
+- Crie um banco com o nome "sistema_login"
+- Importe o arquivo "sistema_login.sql" no banco
 
-
+5. **Acesse o site**
+- No navegador, digite: http://localhost/desapeguei/
 
 
 
